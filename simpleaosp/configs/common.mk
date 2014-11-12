@@ -41,6 +41,12 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/vendor/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     $(LOCAL_PATH)/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 
+# Backuptool support
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/addon.d/50-simpleaosp.sh:system/addon.d/50-simepleaosp.sh \
+    $(LOCAL_PATH)/bin/backuptool.functions:system/bin/backuptool.functions \
+    $(LOCAL_PATH)/bin/backuptool.sh:system/bin/backuptool.sh
+
 # Bootanimation support
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip
