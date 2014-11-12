@@ -6,6 +6,7 @@ LOCAL_PATH:= vendor/simpleaosp/prebuilts/common/system
 
 # Common build prop overrides 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
