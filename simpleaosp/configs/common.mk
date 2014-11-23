@@ -30,6 +30,9 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     Stk
 
+# Bootanimation
+PRODUCT_BOOTANIMATION := $(LOCAL_PATH)/media/bootanimation.zip
+
 # Proprietary latinime lib needed for swyping
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/libjni_latinime.so:system/lib/libjni_latinime.so
@@ -48,7 +51,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/addon.d/50-simpleaosp.sh:system/addon.d/50-simepleaosp.sh \
     $(LOCAL_PATH)/bin/backuptool.functions:system/bin/backuptool.functions \
     $(LOCAL_PATH)/bin/backuptool.sh:system/bin/backuptool.sh
-
-# Bootanimation support
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip
