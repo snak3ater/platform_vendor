@@ -2,7 +2,7 @@
 PRODUCT_BRAND ?= simpleaosp
 
 # Local path for prebuilts
-LOCAL_PATH:= vendor/simpleaosp/prebuilts/common/system
+LOCAL_PATH := vendor/simpleaosp/prebuilts/common/system
 
 # Common build prop overrides 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -51,3 +51,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/addon.d/50-simpleaosp.sh:system/addon.d/50-simepleaosp.sh \
     $(LOCAL_PATH)/bin/backuptool.functions:system/bin/backuptool.functions \
     $(LOCAL_PATH)/bin/backuptool.sh:system/bin/backuptool.sh
+
+# Hammerhead greenbar camera recording fix
+ifneq ($(filter simpleaosp_hammerhead,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lib/libmmcamera_interface.so:system/lib/libmmcamera_interface.so
+endif
