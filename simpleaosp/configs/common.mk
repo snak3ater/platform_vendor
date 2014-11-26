@@ -25,10 +25,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Common overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 
-# Needed Packages
-PRODUCT_PACKAGES += \
-    Launcher3 \
-    Stk
+# Launcher 3 for all
+PRODUCT_PACKAGES += Launcher3
+
+# Stk for only telephony devices
+ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako,$(TARGET_PRODUCT)),)
+PRODUCT_PACKAGES += Stk
+endif
 
 # Bootanimation
 PRODUCT_BOOTANIMATION := $(LOCAL_PATH)/media/bootanimation.zip
