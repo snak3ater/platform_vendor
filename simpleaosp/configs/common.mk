@@ -27,6 +27,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 
 # Common packages
 PRODUCT_PACKAGES += \
+    CMFileManager \
     CMHome \
     Trebuchet
 
