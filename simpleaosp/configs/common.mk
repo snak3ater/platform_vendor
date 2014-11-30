@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
     Trebuchet
 
 # Stk for only telephony devices
-ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako,$(TARGET_PRODUCT)),)
+ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako simpleaosp_shamu,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += Stk
 endif
 
