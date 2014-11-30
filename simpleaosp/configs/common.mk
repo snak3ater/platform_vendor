@@ -25,8 +25,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Common overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 
-# Launcher 3 for all
-PRODUCT_PACKAGES += Launcher3
+# Common packages
+PRODUCT_PACKAGES += \
+    CMHome \
+    Trebuchet
 
 # Stk for only telephony devices
 ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako,$(TARGET_PRODUCT)),)
@@ -60,3 +62,7 @@ ifneq ($(filter simpleaosp_hammerhead,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/libmmcamera_interface.so:system/lib/libmmcamera_interface.so
 endif
+
+# Cm permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
