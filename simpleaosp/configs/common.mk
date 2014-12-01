@@ -20,15 +20,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.rec_timeout=2500 \
     ro.facelock.lively_timeout=2500 \
     ro.facelock.est_max_time=600 \
-    ro.facelock.use_intro_anim=false
+    ro.facelock.use_intro_anim=false \
+    persist.sys.root_access=1
 
 # Common overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
+
+# Cm Superuser
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # Common packages
 PRODUCT_PACKAGES += \
     CMFileManager \
     CMHome \
+    Superuser \
+    su \
     Trebuchet
 
 # Stk for only telephony devices
