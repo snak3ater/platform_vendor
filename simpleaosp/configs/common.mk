@@ -30,7 +30,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 PRODUCT_PACKAGES += \
     CMFileManager \
     OpenDelta \
-    Trebuchet
+    Launcher3
 
 # Busybox
 PRODUCT_PACKAGES += \
