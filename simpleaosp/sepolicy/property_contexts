@@ -1,0 +1,2 @@
+# allow adb related properties to be set
+service.adb.tcp.              u:object_r:adbtcp_prop:s0

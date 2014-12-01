@@ -67,3 +67,6 @@ endif
 # Cm permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+
+# Needed selinux policies
+-include vendor/simpleaosp/sepolicy/sepolicy.mk
