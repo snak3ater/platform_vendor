@@ -59,8 +59,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/backuptool.functions:system/bin/backuptool.functions \
     $(LOCAL_PATH)/bin/backuptool.sh:system/bin/backuptool.sh
 
-# Hammerhead greenbar camera recording fix
+# Hammerhead greenbar camera recording fix & time update fix
 ifneq ($(filter simpleaosp_hammerhead,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/app/TimeService/TimeService.apk:system/app/TimeService/TimeService.apk \
     $(LOCAL_PATH)/lib/libmmcamera_interface.so:system/lib/libmmcamera_interface.so
 endif
