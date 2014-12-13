@@ -34,13 +34,10 @@ PRODUCT_PACKAGES += Launcher3
 
 # Stk for only telephony devices
 ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako simpleaosp_shamu,$(TARGET_PRODUCT)),)
-PRODUCT_PACKAGES += Stk
+ PRODUCT_PACKAGES += Stk
 endif
 
-# Bootanimation
-PRODUCT_BOOTANIMATION := $(LOCAL_PATH)/media/bootanimation.zip
-
-# Proprietary latinime lib needed for swyping
+# Proprietary keyboard lib needed for swyping
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
@@ -59,9 +56,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/backuptool.functions:system/bin/backuptool.functions \
     $(LOCAL_PATH)/bin/backuptool.sh:system/bin/backuptool.sh
 
-# Hammerhead greenbar camera recording fix & time update fix
-ifneq ($(filter simpleaosp_hammerhead,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/app/TimeService/TimeService.apk:system/app/TimeService/TimeService.apk \
-    $(LOCAL_PATH)/lib/libmmcamera_interface.so:system/lib/libmmcamera_interface.so
-endif
+# Include bootanimation mk file
+-include vendor/simpleaosp/configs/bootanimation.mk
