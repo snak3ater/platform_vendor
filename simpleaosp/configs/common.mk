@@ -30,6 +30,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 
 # Common packages
 PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
     CMFileManager
 
 # Launcher 3 for all
