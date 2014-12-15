@@ -1,12 +1,6 @@
 # Brand
 PRODUCT_BRAND ?= simpleaosp
 
-# Global -03 optimizations flag
-USE_O3_OPTIMIZATIONS := true
-
-# Use 4.8 for host
-USE_HOST_4.8 := true
-
 # Local path for prebuilts
 LOCAL_PATH := vendor/simpleaosp/prebuilts/common/system
 
