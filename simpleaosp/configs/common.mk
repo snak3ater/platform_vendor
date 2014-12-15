@@ -33,13 +33,14 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 
 # Common packages
 PRODUCT_PACKAGES += \
-    CellBroadcastReceiver \
     CMFileManager \
     Trebuchet
 
-# Stk for only telephony devices
+# Telephony packages for only telephony devices
 ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako simpleaosp_shamu,$(TARGET_PRODUCT)),)
- PRODUCT_PACKAGES += Stk
+ PRODUCT_PACKAGES += \
+     CellBroadcastReceiver \
+     Stk
 endif
 
 # Proprietary keyboard lib needed for swyping
