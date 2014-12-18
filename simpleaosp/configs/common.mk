@@ -29,6 +29,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 PRODUCT_PACKAGES += \
     CMFileManager \
     Trebuchet \
+
+# Busybox
+PRODUCT_PACKAGES += \
     busybox \
     static_busybox
 
