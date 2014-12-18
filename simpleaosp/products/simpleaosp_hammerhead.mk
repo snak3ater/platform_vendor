@@ -7,6 +7,11 @@ $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 # Inherit common product files
 $(call inherit-product, vendor/simpleaosp/configs/common.mk)
 
+# Module loading support
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/init.d/88LoadMod:system/etc/init.d/88LoadMod \
+    $(LOCAL_PATH)/etc/init.d/89InsMod:system/etc/init.d/89InsMod
+
 # Setup device specific product configuration
 PRODUCT_NAME := simpleaosp_hammerhead
 PRODUCT_BRAND := google

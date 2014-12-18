@@ -1,0 +1,13 @@
+#!/system/bin/sh
+# Install modules only for first boot
+mdpath=/system/lib;
+m=`find $mdpath -type f -name *.ko`;
+mdinstall=/system/lib/modules;
+if [ $m != "" ];
+then
+    # Install modules before modprobe
+    for installm in $mdinstall/scsi_wait_scan.ko $mdinstall/diagchar.ko;
+    do
+        busybox insmod $installm;
+    done;
+fi;

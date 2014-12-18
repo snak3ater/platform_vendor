@@ -1,0 +1,18 @@
+#!/system/bin/sh
+# If kernel modules exsist Load them into the system for the kernel/ROM to be able to access
+# Note busybox required
+# Modules have to be installed with insmod before modprobe can be used
+
+if [ -e /system/etc/init.d/89InsMod ];
+then
+    /system/etc/init.d/89InsMod;
+    busybox mount -o remount,rw -t ext4 /system;
+    busybox rm /system/etc/init.d/89InsMod;
+    busybox mount -o remount,ro -t ext4 /system;
+fi;
+
+# Load the modules now that installed
+for mprobe in scsi_wait_scan diagchar;
+do
+    busybox modprobe $mprobe;
+done;
