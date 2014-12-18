@@ -58,5 +58,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/backuptool.functions:system/bin/backuptool.functions \
     $(LOCAL_PATH)/bin/backuptool.sh:system/bin/backuptool.sh
 
+# Init.d support with run-parts of busybox
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
+    $(LOCAL_PATH)/etc/init.local.rc:root/init.simpleAOSP.rc \
+    $(LOCAL_PATH)/etc/init.d/999Sync:system/etc/init.d/999Sync
+
 # Include bootanimation mk file
 -include vendor/simpleaosp/configs/bootanimation.mk
