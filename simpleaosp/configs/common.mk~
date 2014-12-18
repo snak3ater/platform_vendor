@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Trebuchet \
     busybox \
-    static_busybox
+    busybox_static
 
 # Telephony packages for only telephony devices
 ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako simpleaosp_shamu,$(TARGET_PRODUCT)),)
