@@ -27,7 +27,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 
 # Common packages
 PRODUCT_PACKAGES += \
-    CMFileManager
+    CMFileManager \
+    busybox \
+    static_busybox
 
 # Launcher 3 for all
 PRODUCT_PACKAGES += Launcher3
