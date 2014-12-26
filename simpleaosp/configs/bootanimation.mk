@@ -11,7 +11,7 @@ ifneq ($(filter simpleaosp_hammerhead,$(TARGET_PRODUCT)),)
 endif
 
 ifneq ($(filter simpleaosp_shamu,$(TARGET_PRODUCT)),)
- PRODUCT_BOOTANIMATION := $(LOCAL_PATH)/fallback-bootanimation.zip
+ PRODUCT_BOOTANIMATION := $(LOCAL_PATH)/shamu-bootanimation.zip
 endif
 
 ifneq ($(filter simpleaosp_flo,$(TARGET_PRODUCT)),)
