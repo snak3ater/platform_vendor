@@ -19,8 +19,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="hammerhead" \
     BUILD_FINGERPRINT="google/hammerhead/hammerhead:5.0.1/LRX22C/1602158:user/release-keys" \
     PRIVATE_BUILD_DESC="hammerhead-user 5.0.1 LRX22C 1602158 release-keys"
-
-# Module loading support
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/init.d/88LoadMod:system/etc/init.d/88LoadMod \
-    $(LOCAL_PATH)/etc/init.d/89InsMod:system/etc/init.d/89InsMod
