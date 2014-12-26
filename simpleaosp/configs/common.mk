@@ -20,7 +20,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.rec_timeout=2500 \
     ro.facelock.lively_timeout=2500 \
     ro.facelock.est_max_time=600 \
-    ro.facelock.use_intro_anim=false
+    ro.facelock.use_intro_anim=false \
+    ro.delta.version=VERSION
 
 # Common overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
@@ -28,7 +29,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 # Common packages
 PRODUCT_PACKAGES += \
     CMFileManager \
-    Trebuchet \
+    OpenDelta \
+    Trebuchet
 
 # Busybox
 PRODUCT_PACKAGES += \
