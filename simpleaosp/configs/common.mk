@@ -32,6 +32,11 @@ PRODUCT_PACKAGES += \
     OpenDelta \
     Launcher3
 
+# Extra packages for cmfilemanager
+PRODUCT_PACKAGES += \
+    unrar \
+    zip
+
 # Busybox
 PRODUCT_PACKAGES += \
     busybox \
