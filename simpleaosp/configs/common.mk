@@ -4,6 +4,10 @@ PRODUCT_BRAND ?= simpleaosp
 # Local path for prebuilts
 LOCAL_PATH := vendor/simpleaosp/prebuilts/common/system
 
+# Add extra libs for the compilers to use graphite flag optimizations before any packages get built
+SM_LIB_PATH := prebuilts/sm/lib
+$(shell export LD_LIBRARY_PATH=$(SM_LIB_PATH))
+
 # Common build prop overrides 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
