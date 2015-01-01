@@ -32,6 +32,11 @@ PRODUCT_PACKAGES += \
     OpenDelta \
     Launcher3
 
+# Screen recorder
+PRODUCT_PACKAGES += \
+    ScreenRecorder \
+    libscreenrecorder
+
 # Extra packages for cmfilemanager
 PRODUCT_PACKAGES += \
     unrar \
