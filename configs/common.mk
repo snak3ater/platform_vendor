@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
     OpenDelta \
     ScreenRecorder \
     static_busybox \
-    Trebuchet \
+    Launcher3 \
     unrar \
     zip
 
