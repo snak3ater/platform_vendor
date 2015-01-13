@@ -1,6 +1,3 @@
-# Local path for hammerhead prebuilts
-LOCAL_PATH := vendor/simpleaosp/prebuilts/hammerhead/system
-
 # Enable graphite flags
 GRAPHITE_OPTS := yes
 
