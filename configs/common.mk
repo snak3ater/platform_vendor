@@ -4,9 +4,7 @@ PRODUCT_BRAND ?= simpleaosp
 # Local path for prebuilts
 LOCAL_PATH := vendor/simpleaosp/prebuilts/common/system
 
-include vendor/simpleaosp/configs/sm.mk
-
-# Block based ota flag default to off to get old style ota zip back (To get back block based zip, just enable to true.)
+# Block based ota zip default to off
 TARGET_USES_BLOCK_BASED_OTA := false
 
 # Common build prop overrides
@@ -77,6 +75,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
     $(LOCAL_PATH)/etc/init.local.rc:root/init.simpleAOSP.rc \
     $(LOCAL_PATH)/etc/init.d/999Sync:system/etc/init.d/999Sync
+    
+# Include sm mk file
+-include vendor/simpleaosp/configs/sm.mk
 
 # Include bootanimation mk file
 -include vendor/simpleaosp/configs/bootanimation.mk
