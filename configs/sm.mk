@@ -17,10 +17,10 @@ ifeq (linux,$(HOST_OS))
 # Filter by TARGET_ARCH since we're pointing to ARCH specific compilers.
 # To use this on new devices define TARGET_ARCH in device makefile.
 ifeq (arm,$(TARGET_ARCH))
-export LD_LIBRARY_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$($(combo_2nd_arch_prefix)TARGET_GCC_VERSION)/arch-arm/usr/lib
+export LD_LIBRARY_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.8/arch-arm/usr/lib
 
 # Path to toolchain
-SM_AND_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$($(combo_2nd_arch_prefix)TARGET_GCC_VERSION)
+SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.8
 SM_AND := $(shell $(SM_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
 
 # Find strings in version info
@@ -35,7 +35,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.android=$(SM_AND_VERSION)
 
 ifdef TARGET_KERNEL_CUSTOM_TOOLCHAIN
-SM_KERNEL_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_KERNEL_CUSTOM_TOOLCHAIN)
+SM_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_KERNEL_CUSTOM_TOOLCHAIN)
 SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/arm-eabi-gcc --version)
 
 ifneq ($(filter (SaberMod%),$(SM_KERNEL)),)
@@ -52,10 +52,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 ifeq (arm64,$(TARGET_ARCH))
-export LD_LIBRARY_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_GCC_VERSION)/arch-arm64/usr/lib
+export LD_LIBRARY_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-4.9/arch-arm64/usr/lib
 
 # Path to toolchain
-SM_AND_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_GCC_VERSION)
+SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-4.9
 SM_AND := $(shell $(SM_AND_PATH)/bin/aarch64-linux-android-gcc --version)
 
 # Find strings in version info
