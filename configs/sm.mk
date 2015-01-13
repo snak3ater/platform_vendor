@@ -18,6 +18,7 @@ ifeq (linux,$(HOST_OS))
 # To use this on new devices define TARGET_ARCH in device makefile.
 ifeq (arm,$(TARGET_ARCH))
 export LD_LIBRARY_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.8/arch-arm/usr/lib
+export LIBRARY_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.8/arch-arm/usr/lib
 
 # Path to toolchain
 SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.8
@@ -53,6 +54,7 @@ endif
 
 ifeq (arm64,$(TARGET_ARCH))
 export LD_LIBRARY_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-4.9/arch-arm64/usr/lib
+export LIBRARY_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-4.9/arch-arm64/usr/lib
 
 # Path to toolchain
 SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-4.9
