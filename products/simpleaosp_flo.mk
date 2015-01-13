@@ -1,6 +1,9 @@
 # Inherit AOSP device configuration for flo
 $(call inherit-product, device/asus/flo/full_flo.mk)
 
+# Target arch is arm
+TARGET_ARCH := arm
+
 # Inherit common product files
 $(call inherit-product, vendor/simpleaosp/configs/common.mk)
 

@@ -1,6 +1,15 @@
 # Local path for hammerhead prebuilts
 LOCAL_PATH := vendor/simpleaosp/prebuilts/hammerhead/system
 
+# Enable graphite flags
+GRAPHITE_OPTS := yes
+
+# Google host GCC
+USE_HOST_4_8 := yes
+
+# Target arch is arm
+TARGET_ARCH := arm
+
 # Inherit AOSP device configuration for hammerhead
 $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 

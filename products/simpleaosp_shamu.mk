@@ -1,6 +1,9 @@
 # Inherit AOSP device configuration for shamu
 $(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 
+# Target arch is arm
+TARGET_ARCH := arm
+
 # Inherit common product files
 $(call inherit-product, vendor/simpleaosp/configs/common.mk)
 

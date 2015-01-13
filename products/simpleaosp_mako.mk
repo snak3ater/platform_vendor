@@ -1,6 +1,9 @@
 # Inherit AOSP device configuration for mako
 $(call inherit-product, device/lge/mako/full_mako.mk)
 
+# Target arch is arm
+TARGET_ARCH := arm
+
 # Inherit common product files
 $(call inherit-product, vendor/simpleaosp/configs/common.mk)
 
