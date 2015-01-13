@@ -4,9 +4,7 @@ PRODUCT_BRAND ?= simpleaosp
 # Local path for prebuilts
 LOCAL_PATH := vendor/simpleaosp/prebuilts/common/system
 
-# Add extra libs for the compilers to use graphite flag optimizations before any packages get built
-export LD_LIBRARY_PATH := $(ANDROID_BUILD_TOP)/prebuilts/sm/lib
-export LIBRARY_PATH := $(ANDROID_BUILD_TOP)/prebuilts/sm/lib
+include vendor/simpleaosp/configs/sm.mk
 
 # Block based ota flag default to off to get old style ota zip back (To get back block based zip, just enable to true.)
 TARGET_USES_BLOCK_BASED_OTA := false
