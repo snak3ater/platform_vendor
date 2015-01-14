@@ -35,8 +35,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.android=$(SM_AND_VERSION)
 
-ifdef TARGET_KERNEL_CUSTOM_TOOLCHAIN
-SM_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_KERNEL_CUSTOM_TOOLCHAIN)
+SM_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-4.9
 SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/arm-eabi-gcc --version)
 
 ifneq ($(filter (SaberMod%),$(SM_KERNEL)),)
@@ -45,11 +44,12 @@ SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))
 SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
 SM_KERNEL_VERSION := $(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
 endif
-endif
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.kernel=$(SM_KERNEL_VERSION)
 
+ifeq (yes,$(GRAPHITE_OPTS))
+OPT1 := (graphite)
+endif
 endif
 
 ifeq (arm64,$(TARGET_ARCH))
@@ -71,30 +71,23 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.android=$(SM_AND_VERSION)
 
-endif
-
 ifeq (yes,$(GRAPHITE_OPTS))
-OPTS := (graphite)
+OPT1 := (graphite)
+endif
 endif
 endif
 
 ifeq (yes,$(STRICT_ALIASING))
-ifndef OPTS
-OPTS := (strict)
-else
-OPTS += (strict)
-endif
+OPT2 := (strict)
 endif
 
 ifeq (true,$(USE_O3_OPTIMIZATIONS))
-ifndef OPTS
-OPTS := (extreme)
-else
-OPTS += (extreme)
+OPT3 := (extreme)
 endif
-endif
-ifneq (,$(OPTS))
+
+GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)
+ifneq (,$(GCC_OPTIMIZATION_LEVELS))
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sm.flags=$(OPTS)
+    ro.sm.flags=$(GCC_OPTIMIZATION_LEVELS)
 endif
 
