@@ -1,12 +1,3 @@
-# Enable graphite flags
-GRAPHITE_OPTS := yes
-
-# Google host GCC
-USE_HOST_4_8 := yes
-
-# Target arch is arm
-TARGET_ARCH := arm
-
 # Inherit AOSP device configuration for hammerhead
 $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
@@ -25,3 +16,12 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="hammerhead" \
     BUILD_FINGERPRINT="google/hammerhead/hammerhead:5.0.1/LRX22C/1602158:user/release-keys" \
     PRIVATE_BUILD_DESC="hammerhead-user 5.0.1 LRX22C 1602158 release-keys"
+
+# Target arch is arm
+TARGET_ARCH := arm
+
+# Enable graphite flags
+GRAPHITE_OPTS := yes
+
+# Google host GCC
+USE_HOST_4_8 := yes
