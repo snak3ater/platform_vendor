@@ -34,15 +34,12 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/simpleaosp/overlays/common
 # Common packages
 PRODUCT_PACKAGES += \
     busybox \
-    CMFileManager \
     libscreenrecorder \
     LockClock \
     OpenDelta \
     ScreenRecorder \
     static_busybox \
-    Launcher3 \
-    unrar \
-    zip
+    Launcher3
 
 # Telephony packages for only telephony devices
 ifneq ($(filter simpleaosp_hammerhead simpleaosp_mako simpleaosp_shamu,$(TARGET_PRODUCT)),)
