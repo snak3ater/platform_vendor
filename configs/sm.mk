@@ -43,9 +43,9 @@ SM_KERNEL_NAME := $(filter (SaberMod%),$(SM_KERNEL))
 SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))
 SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
 SM_KERNEL_VERSION := $(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
-endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.kernel=$(SM_KERNEL_VERSION)
+endif
 
 ifeq (yes,$(GRAPHITE_OPTS))
 OPT1 := (graphite)
@@ -66,10 +66,9 @@ SM_AND_NAME := $(filter (SaberMod%),$(SM_AND))
 SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
 SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
 SM_AND_VERSION := $(SM_AND_NAME)-$(SM_AND_DATE)-$(SM_AND_STATUS)
-endif
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.android=$(SM_AND_VERSION)
+endif
 
 ifeq (yes,$(GRAPHITE_OPTS))
 OPT1 := (graphite)
